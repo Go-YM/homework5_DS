@@ -53,6 +53,8 @@ int main()
 {
 	int count = 0;	//Infix전에 Postfix나 Eval을 할수 없도록 하는 count 선언
 	char command;	//사용자로부터 입력받을 command 선언
+	
+	printf("[----- [고영민] [2019038003] -----]");
 
 	//command가 q or Q일때 까지 반복하는 반복문
 	do{	//메뉴 출력
