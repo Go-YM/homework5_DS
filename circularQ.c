@@ -190,29 +190,18 @@ void printQ(QueueType *cQ)
 void debugQ(QueueType *cQ)
 {//Queue에 문제가 있는지 확인하는 함수
 
-	//Queue가 실제로 지워진것 처럼 출력
+	
 	printf("\n---DEBUG\n");
 	for(int i = 0; i < MAX_QUEUE_SIZE; i++)
 	{
-		if(i == cQ->front) 		
-		{
+		if(i == cQ->front) {
 			printf("  [%d] = front\n", i);	//front의 위치 출력
 			continue;
 		}
+		printf("  [%d] = %c\n", i, cQ->queue[i]);
 
-		else if(i > cQ->front)	
-		{
-			printf("  [%d] = %c\n", i, cQ->queue[i]);
-			continue;
-		}
-
-		else					
-		{
-			printf("  [%d] = \n", i);
-			continue;
-		}
 	}
-
+	//printQ(cQ);
 	printf("front = %d, rear = %d\n", cQ->front, cQ->rear);	//front와 rear의 인덱스 위치 출력
 }
 
