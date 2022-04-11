@@ -17,9 +17,9 @@ typedef enum{
 	lparen = 0,  /* ( 왼쪽 괄호 */
 	rparen = 9,  /* ) 오른쪽 괄호*/
 	times = 7,   /* * 곱셈 */
-	divide = 6,  /* / 나눗셈 */
+	divide = 7,  /* / 나눗셈 */
 	plus = 5,    /* + 덧셈 */
-	minus = 4,   /* - 뺄셈 */
+	minus = 5,   /* - 뺄셈 */
 	operand = 1 /* 피연산자 */
 } precedence;
 //구조체 precedence로 우선순위를 정함
@@ -286,12 +286,12 @@ void evaluation()
 			opr2 = evalPop();
 			opr1 = evalPop();
 
-			switch(getToken(symbol))	//symbol 값에 따라 연산 실행 
+			switch(symbol)	//symbol 값에 따라 연산 실행 
 			{
-			case plus: evalPush(opr1 + opr2); break;	//symbol이 +일때 +연산 후 evalStack에 저장
-			case minus: evalPush(opr1 - opr2); break;	//symbol이 -일때 -연산 후 evalStack에 저장
-			case times: evalPush(opr1 * opr2); break;	//symbol이 *일때 *연산 후 evalStack에 저장
-			case divide: evalPush(opr1 / opr2); break;	//symbol이 /일때 /연산 후 evalStack에 저장
+			case '+': evalPush(opr1 + opr2); break;	//symbol이 +일때 +연산 후 evalStack에 저장
+			case '-': evalPush(opr1 - opr2); break;	//symbol이 -일때 -연산 후 evalStack에 저장
+			case '*': evalPush(opr1 * opr2); break;	//symbol이 *일때 *연산 후 evalStack에 저장
+			case '/': evalPush(opr1 / opr2); break;	//symbol이 /일때 /연산 후 evalStack에 저장
 			default: break;	//symbol이 다른 값일때
 			}
 		}
